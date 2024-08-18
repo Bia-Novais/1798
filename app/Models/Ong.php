@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Ong extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'Id_Ong',
+        'Nome',
+        'CNPJ',
+        'Responsavel',
+        'CEP',
+        'Rua',
+        'Numero',
+        'Bairro',
+        'Estado',
+        'Cidade',
+        'Zona',
+        'Complemento',
+        'Telefone',
+        'Linkdoacao',
+        'Sobre',
+        'Email',
+        'Senha',
+    ];
+    // Model Ong.php
+public function cursos()
+{
+    return $this->hasMany(Curso::class);
+}
+
+public function professores()
+{
+    return $this->hasMany(Professor::class);
+}
+
+}
+
